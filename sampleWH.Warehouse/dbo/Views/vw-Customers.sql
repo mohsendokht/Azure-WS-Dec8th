@@ -1,0 +1,1 @@
+CREATE VIEW [dbo].[vw-Customers] AS (SELECT * FROM dbo.Customers)
