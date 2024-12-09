@@ -1801,6 +1801,96 @@
             "value": "False"
           }
         ]
+      },
+      {
+        "name": "vw_Weather",
+        "sourceLineageTag": "[dbo].[vw_Weather]",
+        "columns": [
+          {
+            "name": "DateID",
+            "dataType": "int64",
+            "sourceColumn": "DateID",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "DateID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GeographyID",
+            "dataType": "int64",
+            "sourceColumn": "GeographyID",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "GeographyID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PrecipitationInches",
+            "dataType": "double",
+            "sourceColumn": "PrecipitationInches",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "PrecipitationInches",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "AvgTemperatureFahrenheit",
+            "dataType": "double",
+            "sourceColumn": "AvgTemperatureFahrenheit",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "AvgTemperatureFahrenheit",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_Weather",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
       }
     ],
     "expressions": [
