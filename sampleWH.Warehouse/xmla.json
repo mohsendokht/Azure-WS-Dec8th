@@ -1732,6 +1732,101 @@
         ]
       },
       {
+        "name": "vw-top100-customer",
+        "sourceLineageTag": "[dbo].[vw-top100-customer]",
+        "columns": [
+          {
+            "name": "CustomerID",
+            "dataType": "int64",
+            "sourceColumn": "CustomerID",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "CustomerID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "sourceColumn": "FirstName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "FirstName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "sourceColumn": "LastName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LastName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Phone",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "sourceColumn": "Email",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Email",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw-top100-customer",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "vw_PaymentAnalysis",
         "sourceLineageTag": "[dbo].[vw_PaymentAnalysis]",
         "columns": [
